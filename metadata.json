@@ -1,0 +1,6 @@
+{
+  "name": "Kalkulator Foodcost",
+  "description": "Kalkulator foodcost i marży dla kawiarni w stylu iOS. Pozwala na zapisywanie cen składników, automatyczne wyliczanie kosztu kaw i deserów oraz symulowanie marży.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
