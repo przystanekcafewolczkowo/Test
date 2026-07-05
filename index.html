@@ -1,13 +1,205 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dziękujemy za wizytę w Przystanku!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset i style bazowe */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fbf9f6; /* Ciepły, kremowy odcień beżu */
+            color: #4a3e3d; /* Głęboki, miękki brąz zamiast czerni */
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Kontener główny Landing Page */
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(74, 62, 61, 0.05);
+            text-align: center;
+        }
+
+        /* Logo / Ikona kawiarni */
+        .logo-area {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Nagłówki */
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #2b1f1d;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #8c7674;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        /* Sekcja tekstu podziękowania */
+        .thanks-text {
+            font-size: 1rem;
+            color: #5c4d4c;
+            margin-bottom: 25px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Pytania pomocnicze */
+        .experience-prompt {
+            background-color: #fdfbf7;
+            border-left: 3px solid #d4a373; /* Akcent kawowy/złoty */
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 35px;
+            text-align: left;
+        }
+
+        .experience-prompt h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: #2b1f1d;
+            margin-bottom: 12px;
+        }
+
+        .experience-prompt ul {
+            list-style-type: none;
+        }
+
+        .experience-prompt li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.95rem;
+        }
+
+        /* Dekoracyjna mini-ikona listy */
+        .experience-prompt li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Sekcja Wezwania do Działania (CTA) */
+        .cta-section {
+            margin-bottom: 35px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #bc6c25; /* Ciepły, apetyczny brąz/terakota */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(188, 108, 37, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #dda15e; /* Jaśniejszy odcień przy najechaniu */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(188, 108, 37, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Stopka */
+        footer {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #8c7674;
+            margin-top: 20px;
+            border-top: 1px solid #f0eae4;
+            padding-top: 20px;
+        }
+
+        /* Responsywność na smartfony */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .cta-button {
+                padding: 14px 24px;
+                font-size: 1rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-area">☕</div>
+        
+        <h1>Dziękujemy, że odwiedziłeś Przystanek!</h1>
+        <p class="subtitle">Twoja opinia ma dla nas ogromne znaczenie.</p>
+
+        <div class="thanks-text">
+            <p><strong>Drogi Gościu!</strong></p>
+            <br>
+            <p>Każda wizyta w naszej kawiarni to dla nas wyjątkowy moment. Cieszymy się, że to właśnie u nas postanowiłeś zrobić sobie przerwę w pędzie dnia, usiąść i złapać oddech. Tworząc przestrzeń <strong>Przystanku</strong>, zależało nam na zbudowaniu miejsca ciepłego, przytulnego i pełnego dobrej energii – mamy nadzieję, że udało Ci się to poczuć!</p>
+        </div>
+
+        <div class="experience-prompt">
+            <h3>Podziel się swoimi wrażeniami:</h3>
+            <ul>
+                <li><strong>Nasza przestrzeń:</strong> Czy klimat Przystanku pozwolił Ci się zrelaksować i miło spędzić czas?</li>
+                <li><strong>„Przystankowe” wypieki:</strong> Czy nasze domowe ciasta i świeże słodkości osłodziły Twój dzień i trafiły w Twój gust?</li>
+                <li><strong>Gościnność:</strong> Czy nasza ekipa sprawiła, że poczułeś się u nas jak u dobrych znajomych?</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <a href="TUTAJ_WKLEJ_LINK_DO_TWOICH_OPINII_GOOGLE" class="cta-button" target="_blank" rel="noopener">
+                Dodaj opinię w Google i osłódź nam dzień! ⭐
+            </a>
+        </div>
+
+        <footer>
+            Do zobaczenia na kolejnym Przystanku!<br>
+            <span style="font-size: 0.95rem; font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 300; display: inline-block; margin-top: 5px;">
+                Zespół Kawiarni Przystanek
+            </span>
+        </footer>
+    </div>
+
+</body>
+</html>
